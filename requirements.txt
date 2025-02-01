@@ -2,3 +2,4 @@ flask
 youtube-transcript-api
 transformers
 torch
+os
