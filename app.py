@@ -26,9 +26,12 @@ def transcripcion():
 def get_transcript(video_id):
     """Obtiene la transcripción de un video de YouTube."""
     try:
+        print(f"Intentando obtener la transcripción del video: {video_id}")  # 👀 Log de depuración
         transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=['es', 'en'])
+        print("Transcripción obtenida correctamente")  # 👀 Confirma si la API responde
         return transcript
     except Exception as e:
+        print(f"Error al obtener la transcripción: {e}")  # 🔹 Muestra el error exacto en los logs
         return {"error": str(e)}
 
 if __name__ == '__main__':
