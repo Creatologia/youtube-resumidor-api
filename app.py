@@ -41,6 +41,8 @@ def resumir():
     except Exception as e:
         return jsonify({"error": f"Ocurrió un error inesperado: {str(e)}"}), 500
 
+import os
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host='0.0.0.0', port=port, threaded=True)
+    port = int(os.environ.get("PORT", 10000))  # Usa el puerto asignado por Render
+    app.run(host='0.0.0.0', port=port)
